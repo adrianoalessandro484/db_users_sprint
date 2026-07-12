@@ -1,0 +1,22 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "java -jar /app/app.jar"
+healthcheckPath = "/api/profiles/health"
+healthcheckTimeout = 30
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+[[deploy.env]]
+DATABASE_URL = "jdbc:postgresql://YOUR_RAILWAY_DB_HOST:5432/db_users"
+DATABASE_USERNAME = "adriano"
+DATABASE_PASSWORD = "password123"
+SPRING_APP_NAME = "db_users"
+SERVER_PORT = "8082"
+SEED_ENABLED = "true"
+SEED_ADMIN_EMAIL = "admin@contreras.com"
+SEED_MAESTRO_EMAIL = "maestro@contreras.com"
+SEED_SASTRE_EMAIL = "sastre@contreras.com"
+JPA_SHOW_SQL = "false"
