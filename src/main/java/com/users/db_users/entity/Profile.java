@@ -33,11 +33,14 @@ public class Profile {
     private String especialidades;
 
     @Column(name = "carga_max", nullable = false)
+    @lombok.Builder.Default
     private Integer cargaMax = 5;
 
     @Column(nullable = false)
+    @lombok.Builder.Default
     private Boolean activo = true;
 
     @Column(name = "created_at", nullable = false, updatable = false)
+    @lombok.Builder.Default
     private LocalDateTime createdAt = LocalDateTime.now();
 }
